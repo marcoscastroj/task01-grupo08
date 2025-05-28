@@ -23,14 +23,14 @@ git rebase main
 
 <p>Isso pode ser útil quando você quer aplicar uma mudança específica de uma branch (como uma correção ou funcionalidade) sem trazer todo o histórico de commits da branch.</p>
 
-## Sintaxe:
+### Sintaxe:
 
 ```bash
 git cherry-pick <commit-hash>
 ```
 <p>Onde: "commit-hash" é o ID do commit (um identificador único de cada commit) que você quer aplicar. O hash é uma sequência de caracteres que você pode obter com o comando git log.</p>
 
-## Aplicação:
+### Aplicação:
 
 <p><strong>Passo 1:</strong> Identifique o commit que você deseja aplicar.</p>
 <p>Suponha que você tem duas branches: develop e feature, e você quer pegar um commit específico da branch feature para aplicar na branch develop.</p>
@@ -84,3 +84,46 @@ git git add .
 ```bash
 git git cherry-pick --continue
 ```
+
+## Git **Squash**
+
+### Funcionalidade
+O git squash é uma técnica usada para combinar vários commits sequenciais em um único commit.Essa prática é úil para limpar o histórico do projeto, especialmente ao finalizar uma feature ou antes de fazer um merge com a branch principal.
+
+Com o squash, você pode transformar uma série de pequenos commits (ex: ajustes, correções, testes) em um único commit coeso e significativo, o que torna o histórico de mudanças mais fácil de entender e revisar.
+
+### Sintaxe
+Embora git squash não seja um comando direto do Git, ele é utilizado por meio do rebase interativo:
+```bash
+git rebase -i HEAD~N
+git rebase -i abc123 # com commit hash
+```
+
+HEAD~N define os últimos N commits que você quer reescrever.
+
+Você também pode usar um commit hash como base.
+
+##### Etapas
+1. Inicie o rebase interativo
+``` git rebase -i HEAD~3 ```
+
+2. No editor que abrir, altere as tags pick para squash
+```bash
+pick 123abc Commit 1
+pick 456def Commit 2
+pick 789ghi Commit 3 
+```
+
+```bash 
+pick 123abc Commit 1
+squash 456def Commit 2
+squash 789ghi Commit 3
+```
+
+### Aplicação
+1. Durante o desenvolvimento de uma feature
+2. Antes de dar merge em uma branch
+
+**Fontes de Pesquisa**
+ChatGPT, IA do google(na barra de pesquisa)
+
