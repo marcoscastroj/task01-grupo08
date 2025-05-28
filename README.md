@@ -85,6 +85,9 @@ git git add .
 git git cherry-pick --continue
 ```
 
+**Fontes de Pesquisa**
+ChatGPT
+
 ## Git **Squash**
 
 ### Funcionalidade
