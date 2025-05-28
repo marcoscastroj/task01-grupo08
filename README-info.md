@@ -3,3 +3,6 @@
 
 ## Lucas Feitosa Rossinhole
 <p>Trilha Dados</p>
+
+## Daniele Torres Vieira da Silva   
+<p>Trilha RPA</p>
