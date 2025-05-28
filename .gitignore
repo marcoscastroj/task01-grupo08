@@ -1,0 +1,10 @@
+#dependencies
+.vscode/
+
+#testing
+/coverage
+
+#production
+/build
+
+#misc
